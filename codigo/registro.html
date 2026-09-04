@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoClínica - Registrar Usuario</title>
+    <link rel="stylesheet" href="estilos.css">
+    </head>
+<body>
+
+    <div class="login-card">
+        <h2>EvoClínica</h2>
+        <p class="subtitle">Crear Nueva Cuenta de Usuario</p>
+
+        <!-- Mensajes de Estado -->
+        <?php if (!empty($mensaje_error)): ?>
+            <div class="alert-error">
+                <?php echo htmlspecialchars($mensaje_error); ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (!empty($mensaje_exito)): ?>
+            <div class="alert-success">
+                <?php echo htmlspecialchars($mensaje_exito); ?>
+            </div>
+        <?php endif; ?>
+
+        <form action="registro.php" method="POST">
+            <div class="form-group">
+                <label for="id">ID de Usuario</label>
+                <input 
+                    type="number" 
+                    id="id" 
+                    name="id" 
+                    placeholder="Ej. 1"
+                    value="<?php echo htmlspecialchars($_POST['id'] ?? ''); ?>"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="nombre_usuario">Nombre de Usuario</label>
+                <input 
+                    type="text" 
+                    id="nombre_usuario" 
+                    name="nombre_usuario" 
+                    placeholder="Ej. jperez"
+                    value="<?php echo htmlspecialchars($_POST['nombre_usuario'] ?? ''); ?>"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input 
+                    type="password" 
+                    id="contrasena" 
+                    name="contrasena" 
+                    placeholder="••••••••"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="id_persona">ID de Persona Asociada</label>
+                <input 
+                    type="number" 
+                    id="id_persona" 
+                    name="id_persona" 
+                    placeholder="Ej. 1001"
+                    value="<?php echo htmlspecialchars($_POST['id_persona'] ?? ''); ?>"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn-submit">Registrar Usuario</button>
+        </form>
+
+        <a href="index.php" class="login-link">¿Ya tienes cuenta? Inicia sesión aquí</a>
+    </div>
+
+</body>
+</html>
