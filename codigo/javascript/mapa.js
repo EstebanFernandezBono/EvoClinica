@@ -4,11 +4,17 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(mapa);
 
-async function calcularRuta() {
+    async function calcularRuta() {
+const ImagenDestino = L.icon({
+    iconUrl: '../imagenes/marcador.png',
+
+    iconSize: [25, 41],
+iconAnchor: [12, 41] });
 
 //coding
 
 const texto = `${direccion.value}, ${departamento.value}, Uruguay`;
+document.getElementById('destinoCompleto').value = texto;
 const url = 'https://api.geoapify.com/v1/geocode/search?' +
     'text=' + encodeURIComponent(texto) +
     '&filter=countrycode:uy' +
@@ -26,7 +32,7 @@ if (resultado) {
 
 //routing
 
-const origen = [insertlat.value, insertlng.value];
+const origen = [-34.891099, -56.151944];
 const destino = [resultado.lat, resultado.lon];
 const urlRuta =
     'https://api.geoapify.com/v1/routing?' +

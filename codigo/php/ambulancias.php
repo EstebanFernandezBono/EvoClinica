@@ -131,11 +131,45 @@ $traslados = $consulta->fetchAll(PDO::FETCH_ASSOC);
 <?php if ($traslado_modificar) { ?>
     <input type="hidden" name="id" value="<?php echo $traslado_modificar["id"]; ?>">
     <?php } ?>
-            <div>
-                <label>Destino</label>
-                <input type="text" name="destino"
-                value="<?php echo $traslado_modificar["destino"] ?? ""; ?>" required>
-            </div>
+
+<div>
+    <label>Dirección de destino</label>
+    <input type="text" id="direccion" required>
+</div>
+
+<div>
+    <label>Departamento</label>
+    <select id="departamento" required>
+        <option value="">Seleccionar departamento</option>
+        <option value="Artigas">Artigas</option>
+        <option value="Canelones">Canelones</option>
+        <option value="Cerro Largo">Cerro Largo</option>
+        <option value="Colonia">Colonia</option>
+        <option value="Durazno">Durazno</option>
+        <option value="Flores">Flores</option>
+        <option value="Florida">Florida</option>
+        <option value="Lavalleja">Lavalleja</option>
+        <option value="Maldonado">Maldonado</option>
+        <option value="Montevideo">Montevideo</option>
+        <option value="Paysandú">Paysandú</option>
+        <option value="Río Negro">Río Negro</option>
+        <option value="Rivera">Rivera</option>
+        <option value="Rocha">Rocha</option>
+        <option value="Salto">Salto</option>
+        <option value="San José">San José</option>
+        <option value="Soriano">Soriano</option>
+        <option value="Tacuarembó">Tacuarembó</option>
+        <option value="Treinta y Tres">Treinta y Tres</option>
+    </select>
+</div>
+
+<input type="hidden" name="destino" id="destinoCompleto">
+
+<div class="ambulanciagrid">
+<button type="button" class="boton" onclick="calcularRuta()">
+    Trazar ruta
+</button>
+</div>
 
             <div>
                 <label>Fecha</label>

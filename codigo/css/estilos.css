@@ -403,3 +403,15 @@ a:visited {
     background-color: #484f53;
     color: white;
 }
+
+#departamento {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(106, 119, 126, 0.8);
+    border-radius: 8px;
+    font-family: Montserrat;
+    font-size: 14px;
+    background-color: white;
+    color: #333;
+    outline: none;
+}
