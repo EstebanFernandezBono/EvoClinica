@@ -9,6 +9,8 @@ if (!isset($_SESSION['nombre_usuario'])) {
 $nombre = $_SESSION['nombre_usuario'];
 $ocupacion = $_SESSION['ocupacion'];
 
+//foto de perfil
+
 if ($ocupacion == "Modulo de Ambulancias") {
     $emoji = "🚑";
 } else {
@@ -21,7 +23,7 @@ if ($ocupacion == "Modulo de Ambulancias") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Cuenta</title>
+    <title>EvoClinica</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,14 +100,26 @@ if ($ocupacion == "Modulo de Ambulancias") {
             <div class="datoscuenta">
                 <label>Ocupacion</label>
                 <p><?php echo htmlspecialchars($ocupacion); ?></p>
-            </div>
+</div>
+</div>
 
-        </div>
 <button class="boton cerrarsesion" onclick="location.href='../php/index.php'">
     Cerrar sesión
 </button>
 
-    </div>
+<form action="eliminar_cuenta.php" method="POST" onsubmit="return confirm('¿Estás seguro de que querés eliminar tu cuenta?');">
+    <button type="submit" class="eliminarcuenta">
+        Eliminar cuenta
+    </button>
+</form>
 
+<script>
+function confirmarEliminacion() {
+    return confirm("¿Seguro que quieres eliminar tu cuenta?");
+}
+</script>
+
+
+</div>
 </body>
 </html>

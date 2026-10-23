@@ -1,88 +1,73 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: "Montserrat", sans-serif;
-    margin: 0;
-background-image: url("../imagenes/fondo.png");
-background-repeat: repeat;
+    background-image: url("../imagenes/fondo.png");
+    background-repeat: repeat;
     background-size: auto;
+    color: #292e31;
 }
 
-h1{
+h1 {
     font-weight: 700;
     text-align: center;
 }
 
-h2{
+h2 {
     font-weight: 600;
 }
 
-p{
+p {
     font-weight: 400;
+    line-height: 1.6;
 }
 
-.flex{
+/* encabezado */
+
+.flex {
     display: flex;
     align-items: center;
     width: 90%;
     margin: 20px auto;
 }
 
-.logo{
+.logo {
     width: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.logo img{
+.logo img {
     width: 90px;
 }
 
-.caja{
+.caja {
     width: 25%;
     height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(106, 119, 126, 0.8);
+    border: 1px solid rgba(106, 119, 126, 0.5);
 }
 
-.contenedor{
+.contenedor {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 80%;
     margin: 20px auto;
-    background-color: rgb(106, 119, 126, 0.8);
-    border-radius: 50px;
+    background-color: rgba(106, 119, 126, 0.85);
+    border-radius: 25px;
     overflow: hidden;
-        box-shadow: 0 0 12px rgba(0,0,0,.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
 }
 
-.caja{
-    width: 25%;
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.titulopagina{
-    width: fit-content  ;
-    margin: 2px auto;
-    padding: 15px 40px;
-    background-color: rgba(255,255,255,0.8);
-    border-radius: 20px;
-    text-align: center;
-        box-shadow: 0 0 12px rgba(0,0,0,.9);
-}
-
-.caja a{
+.caja a {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -91,61 +76,75 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 12px rgba(112, 112, 112, 0.7);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.caja:hover{
+.caja:hover {
     background-color: #4c5458;
 }
 
-.modulos{
+.titulopagina {
+    width: fit-content;
+    margin: 10px auto;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* modulos */
+
+.modulos {
     width: 90%;
     margin: 60px auto;
     display: flex;
     justify-content: space-evenly;
 }
 
-.modulo{
+.modulo {
     width: 40%;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.75);
     border-radius: 20px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 0 12px rgba(0,0,0,.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
-.boton{
-
-        padding: 12px;
+.boton {
+    padding: 12px;
     width: 186px;
     border: none;
     border-radius: 50px;
     background-color: #bdbdbd;
-    color: rgb(0, 0, 0);
+    color: #000;
     font-size: 16px;
+    font-family: "Montserrat", sans-serif;
     cursor: pointer;
-        box-shadow: 0 0 12px rgba(0,0,0,.9);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     display: inline-block;
     margin-top: 20px;
     text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.boton:hover{
+.boton:hover {
     background-color: #484f53;
+    color: white;
 }
 
-/* grid */
+/* formulario de consultas */
 
-.formulario{
+.formulario {
     width: 50%;
     margin: 45px auto;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.75);
     border-radius: 20px;
-    box-shadow: 0 0 12px rgba(0,0,0,.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
-.consultas{
+.consultas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
@@ -153,104 +152,140 @@ p{
     padding: 10px;
 }
 
-.consultas label{
+.consultas label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
 .consultas input,
-.consultas textarea{
+.consultas textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #bdbdbd;
     border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
     font-size: 15px;
-        resize: none;
-box-shadow: 0 0 12px rgba(0,0,0,.3);
-
+    resize: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.ancho{
+.consultas input:focus,
+.consultas textarea:focus {
+    outline: none;
+    border-color: #606c72;
+    box-shadow: 0 0 5px rgba(96, 108, 114, 0.35);
+}
+
+.ancho {
     grid-column: 1 / 3;
 }
 
-.consultas button{
+.consultas button {
     padding: 12px;
     width: 150px;
     border: none;
     border-radius: 50px;
     background-color: #bdbdbd;
-    color: rgb(0, 0, 0);
+    color: #000;
+    font-family: "Montserrat", sans-serif;
     font-size: 16px;
     cursor: pointer;
-        box-shadow: 0 0 12px rgba(0,0,0,.9);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.consultas button:hover{
+.consultas button:hover {
     background-color: #505050;
+    color: white;
 }
 
-/* pagina de inicio de sesion */
+/* inicio de sesion */
 
-.login{
+.login {
     width: 400px;
     margin: 70px auto;
     padding: 30px;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.75);
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
 }
 
-.login h2{
+.login h2 {
     text-align: center;
     margin-bottom: 25px;
 }
 
-.login form{
+.login form {
     display: flex;
     flex-direction: column;
 }
 
-.login .boton{
-        padding: 12px;
-    width: 343px;
+.login .boton {
+    padding: 12px;
+    width: 100%;
     border: none;
     border-radius: 50px;
     background-color: #bdbdbd;
-    color: rgb(0, 0, 0);
+    color: #000;
     font-size: 16px;
+    font-family: "Montserrat", sans-serif;
     cursor: pointer;
-        box-shadow: 0 0 12px rgba(0,0,0,.9);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.login label{
+.login label {
     margin-top: 15px;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.login input{
+.login input {
+    padding: 10px;
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login input:focus {
+    outline: none;
+    border-color: #606c72;
+    box-shadow: 0 0 5px rgba(96, 108, 114, 0.35);
+}
+
+.login select {
     padding: 10px;
     border: 1px solid #bdbdbd;
     border-radius: 10px;
     font-size: 15px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
-/*cuenta*/
+.login select:focus {
+    outline: none;
+    border-color: #484f53;
+}
 
-.cuenta{
+/* cuenta */
+
+.cuenta {
     width: 50%;
     margin: 50px auto;
     padding: 35px;
-    background-color: rgba(255,255,255,0.6);
+    background-color: rgba(255, 255, 255, 0.65);
     border-radius: 20px;
-    box-shadow: 0 0 12px rgba(0,0,0,.9);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
     text-align: center;
 }
 
-.fotoperfil{
+.fotoperfil {
     width: 110px;
     height: 110px;
     margin: 0 auto 20px;
@@ -260,60 +295,111 @@ box-shadow: 0 0 12px rgba(0,0,0,.3);
     background-color: #bdbdbd;
     border: 5px solid white;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,.7);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.cuenta h2{
+.cuenta h2 {
     margin-bottom: 30px;
 }
 
-.GridCuenta{
+.GridCuenta {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
     text-align: left;
 }
 
-.datoscuenta{
+.datoscuenta {
     padding: 20px;
-    background-color: rgba(255,255,255,0.9);
-    border-radius: 20px;
-    box-shadow: 0 0 8px rgba(0,0,0,.4);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 }
 
-.datoscuenta label{
+.datoscuenta label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
-.cerrarsesion{
+.cerrarsesion {
     margin-top: 30px;
     background-color: #bdbdbd;
 }
 
-.cerrarsesion:hover{
+.cerrarsesion:hover {
     background-color: #484f53;
+    color: white;
 }
 
-.login select{
-    padding: 10px;
-    border: 1px solid #bdbdbd;
-    border-radius: 10px;
-    font-size: 15px;
-    font-family: "Montserrat", sans-serif;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    cursor: pointer;
-}
+/* enlaces */
 
-.login select:focus{
-    outline: none;
-    border-color: #484f53;
-}
-
-a{
-    color: black;
+a {
+    color: #292e31;
     text-decoration: none;
+}
 
+a:visited {
+    color: #292e31;
+}
+
+/* eliminar cuenta y traslados */
+
+.eliminarcuenta {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 120px;
+    height: 40px;
+    background-color: #bd3838;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.eliminarcuenta:hover {
+    background-color: #922626;
+}
+
+.eliminartraslado {
+    background-color: #d93636;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.eliminartraslado:hover {
+    background-color: darkred;
+}
+
+/* botones de idioma */
+
+.idiomas {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 15px 30px;
+}
+
+.idiomas button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    padding: 10px 18px;
+    background-color: #bdbdbd;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.idiomas button:hover {
+    background-color: #484f53;
+    color: white;
 }

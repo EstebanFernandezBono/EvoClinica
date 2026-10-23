@@ -1,36 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.querySelector("form").addEventListener("submit", function(event) {
 
-    const formulario = document.querySelector("form");
-    const contrasena = document.querySelector('input[name="contrasena"]');
+    let contrasena = document.querySelector('input[name="contrasena"]').value;
 
-    formulario.addEventListener("submit", function(event) {
+    if (contrasena.length < 8) {
+        alert("La contraseña debe tener al menos 8 caracteres.");
+        event.preventDefault();
+        return;
+    }
 
-        let clave = contrasena.value;
+    if (!/[A-Z]/.test(contrasena)) {
+        alert("La contraseña debe tener al menos una mayúscula.");
+        event.preventDefault();
+        return;
+    }
 
-        if (clave.length < 8) {
-            alert("La contraseña debe tener mínimo 8 caracteres.");
-            event.preventDefault();
-            return;
-        }
-
-        if (!/[A-Z]/.test(clave)) {
-            alert("La contraseña debe tener al menos una mayúscula.");
-            event.preventDefault();
-            return;
-        }
-
-        if (!/[a-z]/.test(clave)) {
-            alert("La contraseña debe tener al menos una minúscula.");
-            event.preventDefault();
-            return;
-        }
-
-        if (!/[0-9]/.test(clave)) {
-            alert("La contraseña debe tener al menos un número.");
-            event.preventDefault();
-            return;
-        }
-
-    });
+    if (!/[0-9]/.test(contrasena)) {
+        alert("La contraseña debe tener al menos un número.");
+        event.preventDefault();
+        return;
+    }
 
 });

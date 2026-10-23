@@ -1,0 +1,12 @@
+{
+    "titulo": "Hospital de Clínicas",
+    "iniciar_sesion": "Log In",
+    "usuario": "Username",
+    "contrasena": "Password",
+    "placeholder_usuario": "Enter username",
+    "placeholder_contrasena": "Enter password",
+    "ingresar": "Sign In",
+    "registro": "Don't have an account? Register",
+    "error_campos": "Please fill all fields.",
+    "error_login": "Incorrect username or password."
+}
