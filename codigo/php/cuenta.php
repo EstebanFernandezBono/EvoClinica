@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -37,7 +38,7 @@ if ($ocupacion == "Modulo de Ambulancias") {
     <br>
 
     <div class="titulopagina">
-        <h1>Hospital de Clínicas</h1>
+        <h1 traduccion="titulo">Hospital de Clínicas</h1>
     </div>
 
     <div class="flex">
@@ -49,19 +50,19 @@ if ($ocupacion == "Modulo de Ambulancias") {
         <div class="contenedor">
 
             <section class="caja">
-                <h2><a href="../html/modulos.html">Modulos</a></h2>
+                <h2><a href="../html/modulos.html" traduccion="modulos">Modulos</a></h2>
             </section>
 
             <section class="caja">
-                <h2><a href="../php/contacto.html">Soporte/Contacto</a></h2>
+                <h2><a href="../php/contacto.html" traduccion="soporte_contacto">Soporte/Contacto</a></h2>
             </section>
 
             <section class="caja">
-                <h2><a href="../html/info_extra.html">Info Extra</a></h2>
+                <h2><a href="../html/info_extra.html" traduccion="info_extra">Info Extra</a></h2>
             </section>
 
             <section class="caja">
-                <h2><a href="../php/cuenta.php">Cuenta</a></h2>
+                <h2><a href="../php/cuenta.php" traduccion="cuenta">Cuenta</a></h2>
             </section>
 
         </div>
@@ -78,48 +79,48 @@ if ($ocupacion == "Modulo de Ambulancias") {
             </span>
         </div>
 
-        <h2>Mi cuenta</h2>
+        <h2 traduccion="mi_cuenta">Mi cuenta</h2>
 
         <div class="GridCuenta">
 
             <div class="datoscuenta">
-                <label>Nombre de usuario</label>
+                <label traduccion="nombre_usuario">Nombre de usuario</label>
                 <p><?php echo htmlspecialchars($nombre); ?></p>
             </div>
 
             <div class="datoscuenta">
-                <label>Estado de la cuenta</label>
-                <p>Cuenta activa</p>
+                <label traduccion="estado_cuenta">Estado de la cuenta</label>
+                <p traduccion="cuenta_activa">Cuenta activa</p>
             </div>
 
             <div class="datoscuenta">
-                <label>Tipo de usuario</label>
-                <p>Usuario del sistema</p>
+                <label traduccion="tipo_usuario">Tipo de usuario</label>
+                <p traduccion="usuario_sistema">Usuario del sistema</p>
             </div>
 
             <div class="datoscuenta">
-                <label>Ocupacion</label>
-                <p><?php echo htmlspecialchars($ocupacion); ?></p>
-</div>
-</div>
+                <label traduccion="ocupacion">Ocupacion</label>
+                <p traduccion="<?php echo $ocupacion == 'Modulo de Ambulancias' ? 'modulo_ambulancias' : 'modulo_documentacion'; ?>"><?php echo htmlspecialchars($ocupacion); ?></p>
+            </div>
+        </div>
 
-<button class="boton cerrarsesion" onclick="location.href='../php/index.php'">
-    Cerrar sesión
-</button>
+        <button class="boton cerrarsesion" onclick="location.href='../php/index.php'" traduccion="cerrar_sesion">
+            Cerrar sesión
+        </button>
 
-<form action="eliminar_cuenta.php" method="POST" onsubmit="return confirm('¿Estás seguro de que querés eliminar tu cuenta?');">
-    <button type="submit" class="eliminarcuenta">
-        Eliminar cuenta
-    </button>
-</form>
+        <form action="eliminar_cuenta.php" method="POST" onsubmit="return confirm(traduccionesConfirmacion());">
+            <button type="submit" class="eliminarcuenta" traduccion="eliminar_cuenta">
+                Eliminar cuenta
+            </button>
+        </form>
 
-<script>
-function confirmarEliminacion() {
-    return confirm("¿Seguro que quieres eliminar tu cuenta?");
-}
-</script>
+        <script>
+        function confirmarEliminacion() {
+            return confirm("¿Seguro que quieres eliminar tu cuenta?");
+        }
+        </script>
 
-
-</div>
+    </div>
+<script src="../javascript/idioma.js"></script>
 </body>
 </html>

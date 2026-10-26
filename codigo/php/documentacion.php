@@ -144,7 +144,7 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
 <br>
 
 <div class="titulopagina">
-    <h1>EvoClinica</h1>
+    <h1 traduccion="titulo">EvoClinica</h1>
 </div>
 
 <div class="flexdocumentacion">
@@ -153,11 +153,11 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
         <details open>
 
-            <summary><p>Gestión de Documentos</p></summary>
+            <summary><p traduccion="gestion_documentos">Gestión de Documentos</p></summary>
 
             <?php if ($editar) { ?>
 
-                <h3>Modificar documento</h3>
+                <h3 traduccion="modificar_documento">Modificar documento</h3>
 
                 <form action="documentacion.php" method="POST"
                     enctype="multipart/form-data">
@@ -165,22 +165,22 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
                     <input type="hidden" name="id"
                         value="<?php echo $editar["id"]; ?>">
 
-                    <label>Nombre del paciente:</label>
+                    <label traduccion="nombre_paciente">Nombre del paciente:</label>
 
                     <input type="text" name="paciente"
                         value="<?php echo htmlspecialchars($editar["paciente"]); ?>"
                         required>
 
-                    <label>Reemplazar archivo (opcional):</label>
+                    <label traduccion="reemplazar_archivo">Reemplazar archivo (opcional):</label>
 
                     <input type="file" name="archivo"
                         accept=".doc,.docx,.pdf">
 
-                    <button type="submit" name="guardar">
+                    <button type="submit" name="guardar" traduccion="guardar_cambios">
                         Guardar cambios
                     </button>
 
-                    <a href="documentacion.php">Cancelar</a>
+                    <a href="documentacion.php" traduccion="cancelar">Cancelar</a>
 
                 </form>
 
@@ -189,17 +189,18 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
                 <form action="documentacion.php" method="POST"
                     enctype="multipart/form-data">
 
-                    <label>Nombre del paciente:</label>
+                    <label traduccion="nombre_paciente">Nombre del paciente:</label>
 
                     <input type="text" name="paciente"
+                        traduccion-placeholder="placeholder_paciente"
                         placeholder="Nombre del paciente" required>
 
-                    <label>Seleccionar documento:</label>
+                    <label traduccion="seleccionar_documento">Seleccionar documento:</label>
 
                     <input type="file" name="archivo"
                         accept=".doc,.docx,.pdf" required>
 
-                    <button type="submit" name="subir">
+                    <button type="submit" name="subir" traduccion="subir_documento">
                         Subir documento
                     </button>
 
@@ -213,21 +214,21 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
     <main class="contenidodocumentacion">
 
-        <h2>Módulo de Documentación</h2>
+        <h2 traduccion="modulo_documentacion">Módulo de Documentación</h2>
 
         <br>
 
         <div class="paneldocumentacion">
 
-            <h3>Documentos</h3>
+            <h3 traduccion="documentos">Documentos</h3>
 
             <table>
 
                 <tr>
-                    <th>Paciente</th>
-                    <th>Documento</th>
-                    <th>Fecha</th>
-                    <th>Acciones</th>
+                    <th traduccion="paciente">Paciente</th>
+                    <th traduccion="documento">Documento</th>
+                    <th traduccion="fecha">Fecha</th>
+                    <th traduccion="acciones">Acciones</th>
                 </tr>
 
                 <?php foreach ($documentos as $documento) { ?>
@@ -254,21 +255,21 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
                             <div class="acciones">
 
                                 <a href="documentacion.php?descargar=<?php echo $documento["id"]; ?>">
-                                    <button type="button">Descargar</button>
+                                    <button type="button" traduccion="descargar">Descargar</button>
                                 </a>
 
                                 <a href="documentacion.php?modificar=<?php echo $documento["id"]; ?>">
-                                    <button type="button">Modificar</button>
+                                    <button type="button" traduccion="modificar">Modificar</button>
                                 </a>
 
                                 <form action="documentacion.php" method="POST"
-                                    onsubmit="return confirm('¿Deseas borrar este documento?');">
+                                    onsubmit="return confirm(traduccionesConfirmacion());">
 
                                     <input type="hidden" name="id"
                                         value="<?php echo $documento["id"]; ?>">
 
                                     <button type="submit" name="borrar"
-                                        class="eliminar">
+                                        class="eliminar" traduccion="borrar">
                                         Borrar
                                     </button>
 
@@ -289,6 +290,6 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
     </main>
 
 </div>
-
+<script src="../javascript/idioma.js"></script>
 </body>
 </html>

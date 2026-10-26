@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
     
 <br>
 <div class="titulopagina">
-<h1>Hospital de Clínicas</h1> </div>
+<h1 traduccion="titulo">Hospital de Clínicas</h1> </div>
 
 
     <div class="flex">
@@ -28,19 +29,19 @@
     <div class="contenedor">
 
         <section class="caja">
-            <h2><a href="../html/modulos.html">Modulos</h2></a>
+            <h2><a href="../html/modulos.html" traduccion="modulos">Modulos</h2></a>
         </section>
 
         <section class="caja">
-            <h2><a href="../php/contacto.html">Soporte/Contacto</h2></a>
+            <h2><a href="../php/contacto.html" traduccion="soporte_contacto">Soporte/Contacto</h2></a>
         </section>
 
         <section class="caja">
-            <h2><a href="../html/info_extra.html">Info Extra</h2></a>
+            <h2><a href="../html/info_extra.html" traduccion="info_extra">Info Extra</h2></a>
         </section>
 
         <section class="caja">
-            <h2><a href="../php/cuenta.php">Cuenta</a></h2>
+            <h2><a href="../php/cuenta.php" traduccion="cuenta">Cuenta</a></h2>
         </section>
     </div>
     </div>
@@ -48,44 +49,45 @@
     
     <!--  Codigo de la pagina  -->
 <br>
-<h1>Soporte y Contacto</h1>
+<h1 traduccion="titulo_soporte">Soporte y Contacto</h1>
     <div class="formulario">
-    <h2 style="text-align: center;">Envíanos tu consulta</h2>
+    <h2 style="text-align: center;" traduccion="enviar_consulta">Envíanos tu consulta</h2>
 
         <form class="consultas">
         <div>
-            <label>Nombre</label>
+            <label traduccion="nombre">Nombre</label>
             <input type="text">
 </div>
     <div>
-    <label>Apellido</label>
+    <label traduccion="apellido">Apellido</label>
         <input type="text">
             </div>
 
     <div>
-    <label>Correo electrónico</label>
+    <label traduccion="correo_electronico">Correo electrónico</label>
         <input type="email">
             </div>
 
             <div>
-                <label>Teléfono</label>
+                <label traduccion="telefono">Teléfono</label>
                 <input type="tel">
             </div>
 
             <div class="ancho">
-            <label>Consulta</label>
+            <label traduccion="consulta">Consulta</label>
             <input type="text">
             </div>
 
             <div class="ancho">
-            <label>Mensaje</label>
-            <textarea rows="5" placeholder="Describa aqui su consulta, almenos 20 palabras o mas..."></textarea>
+            <label traduccion="mensaje">Mensaje</label>
+            <textarea rows="5" traduccion-placeholder="placeholder_mensaje" placeholder="Describa aqui su consulta, almenos 20 palabras o mas..."></textarea>
             </div>
 
             <div class="ancho">
-            <button type="submit">Enviar</button>
+            <button type="submit" traduccion="enviar">Enviar</button>
 </div>
 </form>
 </div>
+<script src="../javascript/idioma.js"></script>
 </body>
 </html>

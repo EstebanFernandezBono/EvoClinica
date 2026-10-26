@@ -154,5 +154,6 @@ try {
 </div>
     <script src="../javascript/idioma.js">
 </script>
+<script src="../javascript/idioma.js"></script>
 </body>
 </html>

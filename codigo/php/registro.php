@@ -1,3 +1,4 @@
+
 <?php
 
 $host = 'localhost';
@@ -92,23 +93,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="../css/estilos.css">
-<script src="../javascript/registro.js"></script>    
+
 </head>
 <body>
 <br>
 <div class="titulopagina">
 
-    <h1>Hospital de Clínicas</h1>
+    <h1 traduccion="titulo">Hospital de Clínicas</h1>
 
 </div>
 
 <div class="login">
 
-    <h2>Crear Nueva Cuenta</h2>
+    <h2 traduccion="crear_cuenta">Crear Nueva Cuenta</h2>
 
     <?php if (!empty($mensaje_error)): ?>
 
-        <p>
+        <p traduccion="<?php echo $mensaje_error === 'Completa todos los campos.' ? 'error_campos' : 'usuario_existe'; ?>">
             <?php echo htmlspecialchars($mensaje_error); ?>
         </p>
 
@@ -116,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php if (!empty($mensaje_exito)): ?>
 
-        <p>
+        <p traduccion="cuenta_creada">
             <?php echo htmlspecialchars($mensaje_exito); ?>
         </p>
 
@@ -124,34 +125,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <form action="registro.php" method="POST">
 
-        <label>Nombre</label>
+        <label traduccion="nombre">Nombre</label>
 
         <input
             type="text"
             name="nombre"
+            traduccion-placeholder="placeholder_nombre"
             placeholder="Ingresar nombre"
             value="<?php echo htmlspecialchars($_POST['nombre'] ?? ''); ?>"
             required
         >
 
-        <label>Contraseña</label>
+        <label traduccion="contrasena">Contraseña</label>
 
         <input
             type="password"
             name="contrasena"
+            traduccion-placeholder="placeholder_contrasena"
             placeholder="Ingresar contraseña"
             required
         >
 
-        <label>Ocupación</label>
+        <label traduccion="ocupacion">Ocupación</label>
 
         <select name="ocupacion" required>
-            <option value="">Seleccionar ocupación</option>
-            <option value="Modulo de Documentacion">Modulo de Documentación</option>
-            <option value="Modulo de Ambulancias">Modulo de Ambulancias</option>
+            <option value="" traduccion="seleccionar_ocupacion">Seleccionar ocupación</option>
+            <option value="Modulo de Documentacion" traduccion="modulo_documentacion">Modulo de Documentación</option>
+            <option value="Modulo de Ambulancias" traduccion="modulo_ambulancias">Modulo de Ambulancias</option>
         </select>
 
-        <button type="submit" class="boton">
+        <button type="submit" class="boton" traduccion="registrar">
             Registrar
         </button>
 
@@ -160,8 +163,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <br>
 
     <p>
-        <a href="index.php">¿Ya tienes cuenta? Inicia sesión</a>
+        <a href="index.php" traduccion="iniciar_sesion_enlace">¿Ya tienes cuenta? Inicia sesión</a>
     </p>
 </div>
+<script src="../javascript/registro.js"></script>
+<script src="../javascript/idioma.js"></script>
 </body>
 </html>
