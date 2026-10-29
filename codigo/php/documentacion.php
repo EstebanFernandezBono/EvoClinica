@@ -186,19 +186,15 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
             <?php } else { ?>
 
-                <form action="documentacion.php" method="POST"
-                    enctype="multipart/form-data">
+                <form action="documentacion.php" method="POST" enctype="multipart/form-data">
 
                     <label traduccion="nombre_paciente">Nombre del paciente:</label>
 
-                    <input type="text" name="paciente"
-                        traduccion-placeholder="placeholder_paciente"
-                        placeholder="Nombre del paciente" required>
+                    <input type="text" name="paciente" traduccion-placeholder="placeholder_paciente" placeholder="Nombre del paciente" required>
 
                     <label traduccion="seleccionar_documento">Seleccionar documento:</label>
 
-                    <input type="file" name="archivo"
-                        accept=".doc,.docx,.pdf" required>
+                    <input type="file" name="archivo" accept=".doc,.docx,.pdf" required>
 
                     <button type="submit" name="subir" traduccion="subir_documento">
                         Subir documento
@@ -214,16 +210,12 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
     <main class="contenidodocumentacion">
 
-        <h2 traduccion="modulo_documentacion">Módulo de Documentación</h2>
+    <h2 traduccion="modulo_documentacion">Módulo de Documentación</h2>
+    <br>
+    <div class="paneldocumentacion">
 
-        <br>
-
-        <div class="paneldocumentacion">
-
-            <h3 traduccion="documentos">Documentos</h3>
-
-            <table>
-
+        <h3 traduccion="documentos">Documentos</h3>
+        <table>
                 <tr>
                     <th traduccion="paciente">Paciente</th>
                     <th traduccion="documento">Documento</th>
@@ -234,11 +226,9 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
                 <?php foreach ($documentos as $documento) { ?>
 
                     <tr>
-
-                        <td>
-                            <?php echo htmlspecialchars($documento["paciente"]); ?>
+                    <td>
+                    <?php echo htmlspecialchars($documento["paciente"]); ?>
                         </td>
-
                         <td>
                             <?php echo htmlspecialchars($documento["nombre_archivo"]); ?>
                         </td>
@@ -249,11 +239,9 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
                                 strtotime($documento["fecha_subida"])
                             ); ?>
                         </td>
-
                         <td>
 
-                            <div class="acciones">
-
+                            <div class="acciones"> 
                                 <a href="documentacion.php?descargar=<?php echo $documento["id"]; ?>">
                                     <button type="button" traduccion="descargar">Descargar</button>
                                 </a>
@@ -262,33 +250,22 @@ $documentos = $consulta->fetchAll(PDO::FETCH_ASSOC);
                                     <button type="button" traduccion="modificar">Modificar</button>
                                 </a>
 
-                                <form action="documentacion.php" method="POST"
-                                    onsubmit="return confirm(traduccionesConfirmacion());">
+    <form action="documentacion.php" method="POST" onsubmit="return confirm(traduccionesConfirmacion());">
 
-                                    <input type="hidden" name="id"
-                                        value="<?php echo $documento["id"]; ?>">
+    <input type="hidden" name="id" value="<?php echo $documento["id"]; ?>">
 
-                                    <button type="submit" name="borrar"
-                                        class="eliminar" traduccion="borrar">
-                                        Borrar
-                                    </button>
+<button type="submit" name="borrar" class="eliminar" traduccion="borrar">
+Borrar
+</button>
+</form>
 
-                                </form>
-
-                            </div>
-
-                        </td>
-
-                    </tr>
-
-                <?php } ?>
-
-            </table>
-
-        </div>
-
-    </main>
-
+</div>
+</td>
+</tr>
+<?php } ?>
+</table>
+</div>
+</main>
 </div>
 <script src="../javascript/idioma.js"></script>
 </body>

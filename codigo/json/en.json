@@ -21,6 +21,7 @@
     "documentacion": "Documentation",
     "descripcion_documentacion": "Allows users to access and modify patient-related documentation.",
     "ambulancias": "Ambulances",
+    "subir_documento": "Upload Document",
     "descripcion_ambulancias": "Allows users to manage and track ambulance transfers.",
     "objetivo_sistema": "System Objective",
     "descripcion_objetivo": "EvoClínica aims to organize hospital information and facilitate access to the different system modules, improving management and the overall operation of the hospital.",
